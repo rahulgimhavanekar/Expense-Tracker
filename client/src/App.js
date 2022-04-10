@@ -1,5 +1,12 @@
+import { Fragment } from "react";
+import Layout from "./components/Layout/Layout";
+
 function App() {
-  return <div>React App</div>;
+  return (
+    <Fragment>
+      <Layout></Layout>
+    </Fragment>
+  );
 }
 
 export default App;
