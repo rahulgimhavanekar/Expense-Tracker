@@ -11,7 +11,9 @@
 
 .item {
   display: flex;
+  color: #000;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  text-decoration: none;
 }
