@@ -1,0 +1,48 @@
+.container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.control input {
+  font: inherit;
+  width: 100%;
+  padding: 4px;
+}
+
+.select {
+  padding: 4px 8px;
+  width: 70%;
+  font: inherit;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.actions button {
+  font: inherit;
+  background-color: #0096ff;
+  color: #fff;
+  padding: 8px 32px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.actions button:hover {
+  background-color: rgba(0, 150, 255, 0.8);
+}
