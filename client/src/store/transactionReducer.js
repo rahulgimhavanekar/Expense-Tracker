@@ -9,6 +9,8 @@ import {
 const initialState = {
   transactions: [],
   totalTransactions: 0,
+  expenses: [],
+  income: [],
   loading: false,
   error: null,
 };
@@ -20,6 +22,12 @@ const transactionReducer = (state = initialState, action) => {
         ...state,
         transactions: action.payload,
         totalTransactions: action.payload.length,
+        expenses: action.payload.filter((et) => {
+          return et.type === "Expense";
+        }),
+        income: action.payload.filter((et) => {
+          return et.type === "Income";
+        }),
         loading: false,
         error: null,
       };
@@ -40,6 +48,12 @@ const transactionReducer = (state = initialState, action) => {
         ...state,
         transactions: newList,
         totalTransactions: state.totalTransactions - 1,
+        expenses: newList.filter((et) => {
+          return et.type === "Expense";
+        }),
+        income: newList.filter((et) => {
+          return et.type === "Income";
+        }),
         loading: false,
         error: null,
       };
