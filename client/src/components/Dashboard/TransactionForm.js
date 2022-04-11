@@ -10,7 +10,7 @@ const TransactionForm = () => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
-  const [dt, setDt] = useState();
+  const [transactionDate, setTransactionDate] = useState();
 
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const TransactionForm = () => {
       amount: +amount,
       type: type,
       category: category,
-      dt: dt,
+      date: transactionDate,
     };
 
     dispatch(createTransaction(newTransaction));
@@ -35,7 +35,7 @@ const TransactionForm = () => {
     setAmount("");
     setType("");
     setCategory("");
-    setDt();
+    setTransactionDate();
   };
 
   return (
@@ -94,7 +94,7 @@ const TransactionForm = () => {
         </div>
         <div className={classes.control}>
           <label htmlFor="date">Date</label>
-          <DatePicker onChange={setDt} value={dt} />
+          <DatePicker onChange={setTransactionDate} value={transactionDate} />
         </div>
         <div className={classes.actions}>
           <button>Add New</button>
