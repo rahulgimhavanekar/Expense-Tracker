@@ -1,7 +1,8 @@
 import React from "react";
+import Expenses from "../components/Expenses/Expenses";
 
 const ExpensesPage = () => {
-  return <div>ExpensesPage</div>;
+  return <Expenses />;
 };
 
 export default ExpensesPage;

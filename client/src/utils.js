@@ -4,6 +4,7 @@ export const incomeCategories = [
   "Crypto Profits",
   "Dividend Income",
 ];
+
 export const expenseCategories = [
   "Food & Drinks",
   "Travel",
@@ -15,7 +16,8 @@ export const expenseCategories = [
 
 export const symbol = "₹";
 
-export function convertDate(dt) {
+export function convertDate(date) {
+  const dt = new Date(date);
   return dt.toLocaleDateString([], {
     year: "numeric",
     month: "long",
@@ -55,6 +57,27 @@ export function generateChartPoints(datesRange, transactionsArray) {
     return {
       label: dt,
       value: amt,
+    };
+  });
+}
+
+export function generatePieData(categories, transactionsArray) {
+  return categories.map((ct) => {
+    const allTransactionsForCategory = transactionsArray.filter(
+      (transaction) => {
+        return ct === transaction.category;
+      }
+    );
+
+    console.log(allTransactionsForCategory, "Hey");
+
+    const amt = allTransactionsForCategory.reduce((currNum, item) => {
+      return currNum + item.amount;
+    }, 0);
+
+    return {
+      category: ct,
+      amount: amt,
     };
   });
 }

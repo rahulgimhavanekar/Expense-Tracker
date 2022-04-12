@@ -1,0 +1,31 @@
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.left_side h5 {
+  font-size: 1.2rem;
+}
+
+.left_side p {
+  color: #aaa;
+}
+
+.right_side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.right_side button {
+  font: inherit;
+  background-color: #ccc;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
