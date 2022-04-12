@@ -15,6 +15,7 @@ const TransactionList = ({ list }) => {
           return (
             <Transaction
               key={transaction._id}
+              id={transaction._id}
               title={transaction.title}
               date={transaction.date}
               amount={transaction.amount}

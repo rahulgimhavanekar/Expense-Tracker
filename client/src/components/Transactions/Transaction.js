@@ -1,9 +1,17 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteTransaction } from "../../actions/transactionActions";
 import { convertDate } from "../../utils/utils";
 import { symbol } from "../../utils/constants";
 import classes from "./Transaction.module.css";
 
-const Transaction = ({ title, date, amount }) => {
+const Transaction = ({ id, title, date, amount }) => {
+  const dispatch = useDispatch();
+
+  const deleteHandler = () => {
+    dispatch(deleteTransaction(id));
+  };
+
   return (
     <div className={classes.transaction}>
       <div className={classes.left_side}>
@@ -14,7 +22,9 @@ const Transaction = ({ title, date, amount }) => {
         <p>
           {symbol} {amount}
         </p>
-        <button className={classes.btn}>X</button>
+        <button className={classes.btn} onClick={deleteHandler}>
+          X
+        </button>
       </div>
     </div>
   );

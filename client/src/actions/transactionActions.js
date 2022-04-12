@@ -41,7 +41,7 @@ export const deleteTransaction = (transactionId) => {
   return async (dispatch) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/transaction/${transactionId}`
+        `http://localhost:5000/api/transactions/${transactionId}`
       );
       const data = response.data.data;
       dispatch({ type: DELETE_TRANSACTION, payload: data });
