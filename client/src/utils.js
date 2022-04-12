@@ -31,14 +31,14 @@ export function countTotal(items) {
   }, 0);
 }
 
-export function dateRange(startDate, endDate, steps = 1) {
+export function dateRange(month, year) {
   const dateArray = [];
-  let currentDate = new Date(startDate);
+  let date = new Date(year, month, 1);
 
-  while (currentDate <= new Date(endDate)) {
-    dateArray.push(new Date(currentDate).toString().slice(0, 15));
+  while (date.getMonth() === month) {
+    dateArray.push(new Date(date).toString().slice(0, 15));
     // Use UTC date to prevent problems with time zones and DST
-    currentDate.setUTCDate(currentDate.getUTCDate() + steps);
+    date.setUTCDate(date.getUTCDate() + 1);
   }
 
   return dateArray;

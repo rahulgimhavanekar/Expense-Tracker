@@ -26,26 +26,24 @@ ChartJS.register(
 );
 
 const Chart = () => {
-  const [startDate, setStartDate] = useState(
-    new Date(moment().subtract(7, "days").calendar())
-  );
-  const [endDate, setEndDate] = useState(new Date());
+  const [dateForChart, setDateForChart] = useState(new Date());
   const [datesList, setDatesList] = useState([]);
 
   const expenseTransactions = useSelector((state) => state.expenses);
   const incomeTransactions = useSelector((state) => state.income);
 
   useEffect(() => {
-    setDatesList(dateRange(startDate, endDate));
-  }, [startDate, endDate]);
+    setDatesList(
+      dateRange(dateForChart.getMonth(), dateForChart.getFullYear())
+    );
+  }, [dateForChart]);
 
   console.log(datesList);
 
   const expensesChartData = generateChartPoints(datesList, expenseTransactions);
   const incomeChartData = generateChartPoints(datesList, incomeTransactions);
 
-  console.log(expensesChartData, "ET");
-  console.log(incomeChartData, "IT");
+  console.log(dateForChart);
 
   const options = {
     responsive: true,
@@ -114,16 +112,12 @@ const Chart = () => {
   return (
     <div className={classes.container}>
       <div className={classes.date_range}>
-        <label htmlFor="from">From</label>
+        <label htmlFor="from">For</label>
         <DatePicker
-          onChange={setStartDate}
-          value={startDate}
-          maxDate={new Date()}
-        />
-        <label htmlFor="to">To</label>
-        <DatePicker
-          onChange={setEndDate}
-          value={endDate}
+          onChange={setDateForChart}
+          value={dateForChart}
+          format="y MMMM"
+          disableCalendar={true}
           maxDate={new Date()}
         />
       </div>
