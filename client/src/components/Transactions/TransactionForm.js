@@ -94,7 +94,11 @@ const TransactionForm = () => {
         </div>
         <div className={classes.control}>
           <label htmlFor="date">Date</label>
-          <DatePicker onChange={setTransactionDate} value={transactionDate} />
+          <DatePicker
+            onChange={setTransactionDate}
+            value={transactionDate}
+            maxDate={new Date()}
+          />
         </div>
         <div className={classes.actions}>
           <button>Add New</button>
