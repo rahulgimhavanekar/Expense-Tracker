@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import DatePicker from "react-date-picker";
 import { createTransaction } from "../../actions/transactionActions";
-import { incomeCategories, expenseCategories } from "../../utils";
+import { incomeCategories, expenseCategories } from "../../utils/constants";
 import classes from "./TransactionForm.module.css";
 
 const TransactionForm = () => {
@@ -85,8 +85,8 @@ const TransactionForm = () => {
             <option value="">Select Category</option>
             {selectedCategories.map((sc, idx) => {
               return (
-                <option key={idx} value={sc}>
-                  {sc}
+                <option key={idx} value={sc.type}>
+                  {sc.type}
                 </option>
               );
             })}

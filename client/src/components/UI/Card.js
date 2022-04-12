@@ -1,5 +1,5 @@
 import React from "react";
-import { symbol } from "../../utils";
+import { symbol } from "../../utils/constants";
 import classes from "./Card.module.css";
 
 const Card = ({ title, total, icon }) => {

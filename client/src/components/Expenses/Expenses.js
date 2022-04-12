@@ -1,27 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import TransactionList from "../Transactions/TransactionList";
-import { expenseCategories, generatePieData } from "../../utils";
+import { generatePieData } from "../../utils/utils";
+import { expenseCategories } from "../../utils/constants";
 import PieChart from "../Charts/PieChart";
 import classes from "./Expenses.module.css";
-
-const expenseColors = [
-  "#d3583a",
-  "#dc6a48",
-  "#e57c58",
-  "#ee8d68",
-  "#f79d79",
-  "#ffae8a",
-];
-
-const expensesAmount = [
-  { type: "Food & Drinks", amount: 0 },
-  { type: "Shopping", amount: 0 },
-  { type: "Travel", amount: 0 },
-  { type: "Rent/Mortgage", amount: 0 },
-  { type: "Entertainment", amount: 0 },
-  { type: "Bills & Payment", amount: 0 },
-];
 
 const Expenses = () => {
   const expenseTransactions = useSelector((state) => state.expenses);
@@ -42,14 +25,14 @@ const Expenses = () => {
   };
 
   const pieData = {
-    labels: expenseCategories,
+    labels: expenseData.map((item) => item.type),
     datasets: [
       {
         label: "Expenses",
         data: expenseData.map((item) => {
           return item.amount;
         }),
-        backgroundColor: expenseColors,
+        backgroundColor: expenseData.map((item) => item.color),
       },
     ],
   };

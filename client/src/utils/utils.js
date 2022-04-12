@@ -1,21 +1,3 @@
-export const incomeCategories = [
-  "Salary",
-  "Investments",
-  "Crypto Profits",
-  "Dividend Income",
-];
-
-export const expenseCategories = [
-  "Food & Drinks",
-  "Travel",
-  "Entertainment",
-  "Rent/Mortgage",
-  "Shopping",
-  "Bills & Payment",
-];
-
-export const symbol = "₹";
-
 export function convertDate(date) {
   const dt = new Date(date);
   return dt.toLocaleDateString([], {
@@ -50,34 +32,41 @@ export function generateChartPoints(datesRange, transactionsArray) {
       return dt === new Date(item.date).toString().slice(0, 15);
     });
 
-    const amt = allTransactionsOfTheDay.reduce((currNum, item) => {
+    const total = allTransactionsOfTheDay.reduce((currNum, item) => {
       return currNum + item.amount;
     }, 0);
 
     return {
       label: dt,
-      value: amt,
+      amount: total,
     };
   });
 }
 
 export function generatePieData(categories, transactionsArray) {
-  return categories.map((ct) => {
-    const allTransactionsForCategory = transactionsArray.filter(
-      (transaction) => {
-        return ct === transaction.category;
-      }
-    );
+  transactionsArray.forEach((t) => {
+    const category = categories.find((ct) => ct.type === t.category);
 
-    console.log(allTransactionsForCategory, "Hey");
-
-    const amt = allTransactionsForCategory.reduce((currNum, item) => {
-      return currNum + item.amount;
-    }, 0);
-
-    return {
-      category: ct,
-      amount: amt,
-    };
+    if (category) {
+      category.amount += t.amount;
+    }
   });
+
+  return categories.filter((c) => c.amount > 0);
+  // return categories.map((ct) => {
+  // const allTransactionsForCategory = transactionsArray.filter(
+  //   (transaction) => {
+  //     return ct === transaction.category;
+  //   }
+  // );
+
+  // const total = allTransactionsForCategory.reduce((currNum, item) => {
+  //   return currNum + item.amount;
+  // }, 0);
+
+  // return {
+  //   category: ct,
+  //   amount: total,
+  // };
+  // });
 }

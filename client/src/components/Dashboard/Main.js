@@ -5,7 +5,7 @@ import incomeIconGrey from "../../assets/income_icon_grey.svg";
 import balanceIcon from "../../assets/balance_icon.svg";
 import Card from "../UI/Card";
 import DatePicker from "react-date-picker";
-import { dateRange, generateChartPoints, countTotal } from "../../utils";
+import { dateRange, generateChartPoints, countTotal } from "../../utils/utils";
 import BarChart from "../Charts/BarChart";
 import classes from "./Main.module.css";
 
@@ -55,12 +55,12 @@ const Main = () => {
     datasets: [
       {
         label: `Expenses`,
-        data: expensesChartData.map((item) => item.value),
+        data: expensesChartData.map((item) => item.amount),
         backgroundColor: "#da0037",
       },
       {
         label: `Income`,
-        data: incomeChartData.map((item) => item.value),
+        data: incomeChartData.map((item) => item.amount),
         backgroundColor: "#000",
       },
     ],

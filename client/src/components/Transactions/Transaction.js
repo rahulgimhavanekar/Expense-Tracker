@@ -1,5 +1,6 @@
 import React from "react";
-import { symbol, convertDate } from "../../utils";
+import { convertDate } from "../../utils/utils";
+import { symbol } from "../../utils/constants";
 import classes from "./Transaction.module.css";
 
 const Transaction = ({ title, date, amount }) => {
