@@ -5,3 +5,15 @@
   margin-left: 1rem;
   height: 100%;
 }
+
+.chart_container {
+  background-color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem;
+  height: 100%;
+}
+
+.chart_container h1 {
+  margin-bottom: 0.5rem;
+}

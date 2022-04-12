@@ -10,3 +10,21 @@
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1rem;
 }
+
+.chart_container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.date_range {
+  margin-bottom: 1rem;
+}
+
+.date_range label {
+  margin: 0 8px;
+}
+
+.chart {
+  padding: 1rem;
+}
