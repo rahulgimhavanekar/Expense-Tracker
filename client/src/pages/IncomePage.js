@@ -1,7 +1,8 @@
 import React from "react";
+import Income from "../components/Income/Income";
 
 const IncomePage = () => {
-  return <div>IncomePage</div>;
+  return <Income />;
 };
 
 export default IncomePage;
