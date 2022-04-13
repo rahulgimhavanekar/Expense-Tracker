@@ -49,6 +49,7 @@ const TransactionForm = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter Title"
+            required
           />
         </div>
         <div className={classes.control}>
@@ -59,6 +60,7 @@ const TransactionForm = () => {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter Amount"
+            required
           />
         </div>
         <div className={classes.control}>
@@ -68,6 +70,7 @@ const TransactionForm = () => {
             value={type}
             className={classes.select}
             onChange={(e) => setType(e.target.value)}
+            required
           >
             <option value="">Select Type</option>
             <option value="Income">Income</option>
@@ -81,6 +84,7 @@ const TransactionForm = () => {
             value={category}
             className={classes.select}
             onChange={(e) => setCategory(e.target.value)}
+            required
           >
             <option value="">Select Category</option>
             {selectedCategories.map((sc, idx) => {

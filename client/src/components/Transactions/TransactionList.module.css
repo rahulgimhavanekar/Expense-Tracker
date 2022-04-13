@@ -11,3 +11,8 @@
   gap: 1rem;
   border-bottom: 1px solid #ccc;
 }
+
+.content p {
+  text-align: center;
+  margin-top: 6rem;
+}

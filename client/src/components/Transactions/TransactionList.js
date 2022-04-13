@@ -11,17 +11,21 @@ const TransactionList = ({ list }) => {
         <h1>Recent Transactions</h1>
       </div>
       <div className={classes.content}>
-        {list.map((transaction) => {
-          return (
-            <Transaction
-              key={transaction._id}
-              id={transaction._id}
-              title={transaction.title}
-              date={transaction.date}
-              amount={transaction.amount}
-            />
-          );
-        })}
+        {list.length === 0 ? (
+          <p>You don't have any transactions</p>
+        ) : (
+          list.map((transaction) => {
+            return (
+              <Transaction
+                key={transaction._id}
+                id={transaction._id}
+                title={transaction.title}
+                date={transaction.date}
+                amount={transaction.amount}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );
