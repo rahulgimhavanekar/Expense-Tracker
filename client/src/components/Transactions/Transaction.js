@@ -22,9 +22,7 @@ const Transaction = ({ id, title, date, amount }) => {
         <p>
           {symbol} {amount}
         </p>
-        <button className={classes.btn} onClick={deleteHandler}>
-          X
-        </button>
+        <button onClick={deleteHandler}>X</button>
       </div>
     </div>
   );

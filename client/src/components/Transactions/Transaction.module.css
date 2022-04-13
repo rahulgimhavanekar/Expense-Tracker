@@ -22,7 +22,8 @@
 
 .right_side button {
   font: inherit;
-  background-color: #ccc;
+  color: #fff;
+  background-color: #0096ff;
   border: none;
   outline: none;
   cursor: pointer;
