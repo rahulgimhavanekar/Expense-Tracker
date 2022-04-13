@@ -19,8 +19,15 @@ const Main = () => {
     );
   }, [dateForChart]);
 
-  const expenseTransactions = useSelector((state) => state.expenses);
-  const incomeTransactions = useSelector((state) => state.income);
+  const transactions = useSelector((state) => state.transactions);
+
+  const expenseTransactions = transactions.filter((transaction) => {
+    return transaction.type === "Expense";
+  });
+
+  const incomeTransactions = transactions.filter((transaction) => {
+    return transaction.type === "Income";
+  });
 
   const totalExpense = countTotal(expenseTransactions);
   const totalIncome = countTotal(incomeTransactions);

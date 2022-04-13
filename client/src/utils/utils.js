@@ -44,6 +44,8 @@ export function generateChartPoints(datesRange, transactionsArray) {
 }
 
 export function generatePieData(categories, transactionsArray) {
+  categories.forEach((c) => (c.amount = 0));
+
   transactionsArray.forEach((t) => {
     const category = categories.find((ct) => ct.type === t.category);
 
@@ -53,20 +55,4 @@ export function generatePieData(categories, transactionsArray) {
   });
 
   return categories.filter((c) => c.amount > 0);
-  // return categories.map((ct) => {
-  // const allTransactionsForCategory = transactionsArray.filter(
-  //   (transaction) => {
-  //     return ct === transaction.category;
-  //   }
-  // );
-
-  // const total = allTransactionsForCategory.reduce((currNum, item) => {
-  //   return currNum + item.amount;
-  // }, 0);
-
-  // return {
-  //   category: ct,
-  //   amount: total,
-  // };
-  // });
 }

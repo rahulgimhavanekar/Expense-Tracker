@@ -7,7 +7,12 @@ import { incomeCategories } from "../../utils/constants";
 import classes from "./Income.module.css";
 
 const Income = () => {
-  const incomeTransactions = useSelector((state) => state.income);
+  const transactions = useSelector((state) => state.transactions);
+
+  const incomeTransactions = transactions.filter(
+    (transaction) => transaction.type === "Income"
+  );
+
   const incomeData = generatePieData(incomeCategories, incomeTransactions);
 
   const pieOptions = {

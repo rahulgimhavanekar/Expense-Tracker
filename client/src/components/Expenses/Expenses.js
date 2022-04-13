@@ -7,7 +7,12 @@ import PieChart from "../Charts/PieChart";
 import classes from "./Expenses.module.css";
 
 const Expenses = () => {
-  const expenseTransactions = useSelector((state) => state.expenses);
+  const transactions = useSelector((state) => state.transactions);
+
+  const expenseTransactions = transactions.filter(
+    (transaction) => transaction.type === "Expense"
+  );
+
   const expenseData = generatePieData(expenseCategories, expenseTransactions);
 
   const pieOptions = {
