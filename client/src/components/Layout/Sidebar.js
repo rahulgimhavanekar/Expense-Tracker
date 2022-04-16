@@ -7,7 +7,7 @@ import classes from "./Sidebar.module.css";
 
 const Sidebar = () => {
   return (
-    <div className={classes.sidebar}>
+    <aside className={classes.sidebar}>
       <ul>
         <li>
           <NavLink
@@ -37,7 +37,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
       </ul>
-    </div>
+    </aside>
   );
 };
 

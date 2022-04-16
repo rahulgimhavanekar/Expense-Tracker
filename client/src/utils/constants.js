@@ -1,31 +1,24 @@
 export const symbol = "₹";
 
-const incomeColors = [
-  "#123123",
-  "#154731",
-  "#165f40",
-  "#14915f",
-  "#0bc77e",
-  "#00ff9d",
-];
+const incomeColors = ["#b50d12", "#a50052", "#722e76", "#313f77", "#003f5c"];
+
 const expenseColors = [
-  "#b50d12",
-  "#bf2f1f",
-  "#c9452c",
-  "#d3583a",
-  "#dc6a48",
-  "#e57c58",
-  "#f79d79",
-  "#f55b5f",
+  "#00ff9d",
+  "#63f67b",
+  "#8aec5b",
+  "#a8e03d",
+  "#c2d41e",
+  "#d9c600",
+  "#edb700",
+  "#ffa600",
 ];
 
 export const incomeCategories = [
   { type: "Business", amount: 0, color: incomeColors[0] },
   { type: "Investments", amount: 0, color: incomeColors[1] },
-  { type: "Crypto Profits", amount: 0, color: incomeColors[2] },
   { type: "Salary", amount: 0, color: incomeColors[3] },
   { type: "Savings", amount: 0, color: incomeColors[4] },
-  { type: "Other", amount: 0, color: incomeColors[5] },
+  { type: "Secondary Income", amount: 0, color: incomeColors[5] },
 ];
 
 export const expenseCategories = [
