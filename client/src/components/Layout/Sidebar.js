@@ -8,21 +8,30 @@ import classes from "./Sidebar.module.css";
 const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
-      <ul className={classes.item_list}>
+      <ul>
         <li>
-          <NavLink className={classes.item} to="/dashboard">
+          <NavLink
+            className={({ isActive }) => (isActive ? classes.active : "")}
+            to="/dashboard"
+          >
             <img src={dashboardIcon} alt="dashboard" />
             Dashboard
           </NavLink>
         </li>
         <li>
-          <NavLink className={classes.item} to="/expenses">
+          <NavLink
+            className={({ isActive }) => (isActive ? classes.active : "")}
+            to="/expenses"
+          >
             <img src={expensesIcon} alt="expenses" />
             Expenses
           </NavLink>
         </li>
         <li>
-          <NavLink className={classes.item} to={"/income"}>
+          <NavLink
+            className={({ isActive }) => (isActive ? classes.active : "")}
+            to={"/income"}
+          >
             <img src={incomeIcon} alt="income" />
             Income
           </NavLink>
